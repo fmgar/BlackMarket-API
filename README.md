@@ -6,14 +6,14 @@ This repository is a Setup of Django_rest to create API's. It have based on the 
 
 ```
 ├── ...
-├── /config                    # root
-│   ├── settings               # settings of Django
+├── /config                # root
+│   ├── settings           # settings of Django
 │		├── base.py            # Directory, Timezone, Apps and BD
-│   	├── local.py           # Secret Key, Email_Backend and Cache
-│   	├── production.py      # Production environment
-│   	├── test.py            # test Django
-│   ├── urls.py                # Path of urls
-│   ├── wsgi.py                # Deploy
+│   	├── local.py         # Secret Key, Email_Backend and Cache
+│   	├── production.py    # Production environment
+│   	├── test.py          # test Django
+│   ├── urls.py            # Path of urls
+│   ├── wsgi.py            # Deploy
 └── ...
 ```
 
@@ -28,8 +28,8 @@ The modules are in App:
 ```
 ├── /config
 │   ├── base.txt       		# Dependence default
-│   ├── local.txt   		# base.txt + celery + redis + flower
-│   ├── production.txt      # base.txt + gunicor, storages and anymail
+│   ├── local.txt   		  # base.txt + celery + redis + flower
+│   ├── production.txt    # base.txt + gunicor, storages and anymail
 ```
 
 # Docker
