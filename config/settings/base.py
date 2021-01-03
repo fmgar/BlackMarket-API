@@ -44,6 +44,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'rest_framework.outhtoken'
 ]
 LOCAL_APPS = [
     'App.users.apps.UsersAppConfig',
