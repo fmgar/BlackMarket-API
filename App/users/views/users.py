@@ -2,10 +2,11 @@
 
 # Django REST framework
 from rest_framework.views import APIView
+from rest_framework.response import Response
 from rest_framework import status
 
 # Serializers
-from App.users.serializers import UserLoginSerializer
+from App.users.serializers import UserLoginSerializer, UserModelSerializer
 
 
 class UserLoginAPIView(APIView):
@@ -15,10 +16,10 @@ class UserLoginAPIView(APIView):
         """Handle HTTP post request."""
         serializer = UserLoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        toke = serializer.save()
+        user, token = serializer.save()
         data = {
-            'status': 'ok',
-            'token': token
+            'user': UserModelSerializer(user).data,
+            'access_token': token
         }
 
         return Response(data, status=status.HTTP_201_CREATED)
