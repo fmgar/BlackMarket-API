@@ -17,7 +17,7 @@ class CustomerModelSerializer(serializers.ModelSerializer):
             'id',
             'first_name',
             'last_name',
-            'identification',
+            'ident',
             'phone',
             'email',
             "address",

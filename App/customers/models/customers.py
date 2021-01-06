@@ -15,7 +15,7 @@ class Customer(BlackMarketModel):
 
     first_name = models.CharField(max_length=25, blank=False, null=False)
     last_name = models.CharField(max_length=25, blank=True)
-    identify = models.IntegerField(blank=True, null=True)
+    ident = models.IntegerField(blank=True, null=True)
     phone_regex = RegexValidator(
         regex=r'\+?1?\d{9,15}$',
         message="Phone number must be entered in the format: +999999999."
