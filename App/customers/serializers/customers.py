@@ -13,4 +13,15 @@ class CustomerModelSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class. """
         model = Customer
-        fields = '__all__'
+        fields = [
+            'id',
+            'first_name',
+            'last_name',
+            'identification',
+            'phone',
+            'email',
+            "address",
+            "district",
+            "reference",
+            "birthday"
+        ]
