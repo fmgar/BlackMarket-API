@@ -24,12 +24,13 @@ class Customer(BlackMarketModel):
     phone = models.CharField(
         validators=[phone_regex],
         max_length=17,
-        blank=True
+        blank=False,
+        null=False,
     )
 
     email = models.EmailField(
         'email address',
-        unique=False,
+        unique=True,
         error_messages={
             'unique': 'A user with that email already exists.'
         },
@@ -40,9 +41,11 @@ class Customer(BlackMarketModel):
     district = models.CharField(max_length=25, blank=False, null=False)
     reference = models.CharField(max_length=50, blank=True)
     birthday = models.DateField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    codeID = models.CharField(max_length=5, unique=True)
 
     def __str__(self):
-        return "Nombre:{}\nApellido:{}".format(self.first_name, self.last_name)
+        return "Nombre:{} {}".format(self.first_name, self.last_name)
 
     class Meta(BlackMarketModel.Meta):
         ordering = ['-modified', '-created']
