@@ -42,7 +42,6 @@ class Customer(BlackMarketModel):
     reference = models.CharField(max_length=50, blank=True)
     birthday = models.DateField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
-    codeID = models.CharField(max_length=5, unique=True)
 
     def __str__(self):
         return "Nombre:{} {}".format(self.first_name, self.last_name)
