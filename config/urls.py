@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('', include(('App.users.urls', 'users'), namespace='users')),
     path('', include(('App.customers.urls', 'customers'), namespace='customers')),
-
+    path('', include(('App.items.urls', 'items'), namespace='items')),
 
 
 
