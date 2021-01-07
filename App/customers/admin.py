@@ -14,7 +14,7 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display = (
         'first_name',
         'last_name',
-        'identification',
+        'ident',
         'phone'
     )
     search_fields = ('first_name', 'last_name')

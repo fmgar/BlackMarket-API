@@ -10,5 +10,9 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
 
     path('', include(('App.users.urls', 'users'), namespace='users')),
+    path('', include(('App.customers.urls', 'customers'), namespace='customers')),
+    path('', include(('App.items.urls', 'items'), namespace='items')),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
