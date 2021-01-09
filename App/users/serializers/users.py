@@ -20,9 +20,14 @@ from App.users.models import User, Profile
 from datetime import timedelta
 import jwt
 
+# Serializers
+from App.users.serializers.profiles import ProfileModelSerializer
+
 
 class UserModelSerializer(serializers.ModelSerializer):
     """User model serializer."""
+    profile = ProfileModelSerializer(read_only=True)
+
     class Meta:
         model = User
         fields = (
@@ -32,7 +37,8 @@ class UserModelSerializer(serializers.ModelSerializer):
             'phone_number',
             'is_superuser',
             'is_verified',
-            'is_staff'
+            'is_staff',
+            'profile'
         )
 
 
